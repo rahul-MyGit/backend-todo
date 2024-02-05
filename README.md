@@ -11,3 +11,5 @@ This project contains a simle TODO application It has the following features -
 // put a package.json
 
 //validation check using ZOD in types.js file 
+
+// Create Mongoose schema in db.js
