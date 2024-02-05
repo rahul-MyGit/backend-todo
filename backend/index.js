@@ -2,13 +2,15 @@ const express = require('express');
 const { todo } = require('./db');
 const {updateTodo, createTodo} = require('./types.js');
 const app = express();
+const cors = require('cors');
 
 app.use(express.json());
+app.use(cors({}));
 
 app.get("/todos", async (req,res)=>{
-    const response = await todo.find({});
+    const todos = await todo.find({});
     res.json({
-        msg : response
+        todos
     });
 });
 
@@ -26,7 +28,6 @@ app.post("/todo", async (req,res)=>{
         desc : req.body.desc,
         completed : false
     });
-
     res.json({
         msg : "TODO created"
     });
@@ -48,7 +49,7 @@ app.put("/completed", async (req,res)=>{
     },{ $set:{
         completed : true
         }
-    })
+    });
 
     res.json({
         msg : "TODO MARK AS COMPLETED"
