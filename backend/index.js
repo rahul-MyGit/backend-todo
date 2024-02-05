@@ -54,4 +54,7 @@ app.put("/completed", async (req,res)=>{
     })
 });
 
-app.listen(3000);
+app.listen(3000, (err)=>{
+    if (err) console.log("Error in server");
+    console.log("Server is running on 3000");
+});
