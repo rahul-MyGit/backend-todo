@@ -5,11 +5,11 @@ const createTodo = z.object({
     desc : z.string(),
 });
 
-const updateTod = z.object({
-    id : z.string
+const updateTodo = z.object({
+    id : z.string()
 });
 
-module.exports({
+module.exports = {
     createTodo,
-    updateTod
-})
+    updateTodo
+}

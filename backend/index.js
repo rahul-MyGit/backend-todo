@@ -1,6 +1,6 @@
 const express = require('express');
 const { todo } = require('./db');
-const {updateTodo, createTodo} = req('./types.js');
+const {updateTodo, createTodo} = require('./types.js');
 const app = express();
 
 app.use(express.json());
