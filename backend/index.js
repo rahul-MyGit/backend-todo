@@ -43,10 +43,11 @@ app.put("/completed", async (req,res)=>{
     }
     //Edit in mongoDB : update todo and mark it as completed
 
-    await todo.update({
+    await todo.updateOne({
         _id : req.body.id
-    },{
+    },{ $set:{
         completed : true
+        }
     })
 
     res.json({
